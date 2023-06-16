@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:sqlserver://localhost:1433;encrypt=true;trustServerCertificate=true;databaseName=PersonDB
+    username: sa
+    password: admin123
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    show-sql: true
+  mvc:
+    path-match:
+      matching-strategy: ant_path_matcher
+  lifecycle:
+    timeout-per-shutdown-phase: 5000s
+server:
+  port: 8080
