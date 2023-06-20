@@ -46,19 +46,19 @@ public class RestapiApplication {
                 System.out.println(person.toString());
             }
 
-            // Create a new person and save it to the DB
-            Person newPerson = new Person();
-            newPerson.setName("Kamran");
-            newPerson.setContact_num("1234");
-            personService.add(newPerson);
-
-            // Retrieve all entries from PersonDB after adding the new person
-            List<Person> updatedPersons = personService.getAll();
-
-            // Print the updated entries
-            for (Person person : updatedPersons) {
-                System.out.println(person.toString());
-            }
+//            // Create a new person and save it to the DB
+//            Person newPerson = new Person();
+//            newPerson.setName("Kamran");
+//            newPerson.setContact_num("1234");
+//            personService.add(newPerson);
+//
+//            // Retrieve all entries from PersonDB after adding the new person
+//            List<Person> updatedPersons = personService.getAll();
+//
+//            // Print the updated entries
+//            for (Person person : updatedPersons) {
+//                System.out.println(person.toString());
+//            }
         }
     }
 }
