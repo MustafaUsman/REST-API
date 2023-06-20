@@ -12,4 +12,4 @@ spring:
   lifecycle:
     timeout-per-shutdown-phase: 5000s
 server:
-  port: 8080
+  port: 8083

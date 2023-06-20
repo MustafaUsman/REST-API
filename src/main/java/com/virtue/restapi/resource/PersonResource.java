@@ -23,7 +23,7 @@ public class PersonResource {
         return this.service.getById(id);
     }
     @PostMapping(value = "/persons")
-    public Person add(Person person){
+    public Person add(@RequestBody Person person){
         return this.service.add(person);
     }
     @PutMapping(value = "/persons/{id}", consumes = "applications/json")

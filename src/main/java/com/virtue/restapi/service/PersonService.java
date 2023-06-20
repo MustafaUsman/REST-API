@@ -3,6 +3,7 @@ package com.virtue.restapi.service;
 
 import com.virtue.restapi.persistance.Person;
 import com.virtue.restapi.persistance.PersonRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.Optional;
 
 @Service
 public class PersonService {
-
+    @Autowired
     PersonRepository repository;
 
     public PersonService(PersonRepository repository) {

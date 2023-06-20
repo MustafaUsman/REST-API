@@ -12,7 +12,6 @@ import java.util.List;
 
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
-
 public class PersonResourceTest {
 
     @Mock
@@ -40,8 +39,72 @@ public class PersonResourceTest {
         verify(personService, times(1)).getAll();
     }
 
-    // Write similar test methods for other endpoints
+    @Test
+    public void testGetById() {
+        // Arrange
+        long id = 1;
+        Person person = new Person();
+        when(personService.getById(id)).thenReturn(person);
+
+        // Act
+        Person result = personResource.getById(id);
+
+        // Assert
+        assertEquals(person, result);
+        verify(personService, times(1)).getById(id);
+    }
+
+    @Test
+    public void testAdd() {
+        // Arrange
+        Person person = new Person();
+        // Set properties for the person object
+        person.setName("Kamran");
+        // ...
+
+        when(personService.add(any(Person.class))).thenReturn(person);
+
+        // Act
+        Person result = personResource.add(person);
+
+        // Assert
+        assertEquals(person, result);
+        verify(personService, times(1)).add(any(Person.class));
+    }
+
+    @Test
+    public void testUpdate() {
+        // Arrange
+        long id = 1;
+        Person person = new Person();
+        // Set properties for the updated person object
+        person.setName("Updated Name");
+        // ...
+
+        when(personService.update(eq(id), any(Person.class))).thenReturn(person);
+
+        // Act
+        Person result = personResource.update(id, person);
+
+        // Assert
+        assertEquals(person, result);
+        verify(personService, times(1)).update(eq(id), any(Person.class));
+    }
+
+    @Test
+    public void testDelete() {
+        // Arrange
+        long id = 1;
+
+        // Act
+        personResource.delete(id);
+
+        // Assert
+        verify(personService, times(1)).delete(id);
+    }
+
+    // Add more test methods for other endpoints if needed
 
     // ...
-
 }
+
